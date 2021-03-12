@@ -8,8 +8,8 @@ class board():
     def ResetBoard(self):
         self.board = [[0,0,0] for i in range(3)]
 
-    def get_winner(self,x,y):
     
+    def get_winner(self,x,y):
     #Check Rows
         if abs(sum(self.board[x])) == 3:
             return self.board[x][0]

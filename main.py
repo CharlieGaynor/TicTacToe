@@ -2,12 +2,12 @@ from board import board
 from game import game
 from player import player
 from strategies import random_strategy, q_strategy,Human
-#from q_strategy import q_strategy
 from collections import defaultdict
 import pickle
-from icecream import ic
 import json
 from human_game import HumanGame
+
+
 
 ##############################################################
 #Importing the tables from previous learning, to save computation
@@ -19,7 +19,6 @@ with open('table_first.txt') as fobj:
 with open('table_second.txt') as fobj:
         table2 = json.load(fobj)
 ###############################################################
-
 
 def AIvsRandom(number_games,train=False):
     if train:
@@ -47,7 +46,7 @@ def AIvsRandom(number_games,train=False):
 
 
 #AI goes second
-def RandomVSAI(number_games,train=False):
+def RandomVSAI(number_games,train=False,table=table2):
     if train:
         player1 = player(1,random_strategy())
         player2 = player(-1,q_strategy(lr=0.5,exploration=0.4,discount=0.8))
@@ -88,7 +87,7 @@ def AIVSHuman():
 
 ###########################################################################
 
-#Vs human player, with a.i as player 1
+#Vs human player, with a.i as player 2
 #######################################################################
 def HumanVSAI():
 
@@ -123,6 +122,16 @@ def AIVSAI(number_games,train=False):
         game2.print_stats()
         print('---------------------')
 
-AIVSAI(10,train=False)
-RandomVSAI(100)
-AIvsRandom(100)
+######################################################################
+#Human vs Human
+######################################################################
+
+def HumanVSHuman():
+    
+
+    player1 = player(1,Human())
+    player2 = player(-1,Human())
+    board1 = board()
+
+    game1 = HumanGame(board1,player1,player2,human_value = 1,two_human=True)
+    game1.play_many_games()

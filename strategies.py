@@ -1,7 +1,6 @@
 import random
 from collections import defaultdict
 import copy
-from icecream import ic
 
 class Human():
 
