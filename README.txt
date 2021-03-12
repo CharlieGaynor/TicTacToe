@@ -1,3 +1,12 @@
-TIcTacToe. Includes a bot trained via reinforcement learning which is unbeatable.
-Also includes capabilites to play vs the bot (either 'O' or 'X') yourself, and simulate games of AI vs random player, AI vs AI etc
-to see the statistics. Coded using an object-oriented approach.
+New and improved Tic Tac Toe in shell! Coded using object-oriented approach
+
+
+* Includes a bot trained via reinforcement learning which is unbeatable.
+* Can play vs the bot either in 1st or 2nd position
+* Can play a human vs human game
+* Can run without python installed, just run the exe in the folder you downloaded!
+
+You can also simulate games of ai vs ai, either random games or with a trained bot.
+If you like, you could train the bot yourself again using already made functions in 'main.py', but you'll need to have python installed and play around with it abit yourself.
+
+*TODO: Add graphics & a menu.
